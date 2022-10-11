@@ -1,11 +1,47 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>only for test</h1>
+    <script>
+        const deepLink = 'https://mobile-links.eng.vn.cloud.tesla.com/_rs/referral?screen=referral_credits_screen';
+        const sniffOS = () => {
+            const uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+            const isWeChat = /micromessenger/i.test(uaStr.toLowerCase());
+            const isAndroid = /Android/i.test(uaStr);
+            const isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+            return {
+                isWeChat,
+                isAndroid,
+                isIOS,
+            };
+        };
+        const { isWeChat, isAndroid, isIOS } = sniffOS();
+
+        if (isWeChat && isAndroid) {
+            setShowWeChatView(true);
+        } else if (isAndroid) {
+            window.location.href = deepLink; // try to open TESLA app.
+            setTimeout(() => {
+                window.location = 'https://www.tesla.cn/go/app'; // fallback: if haven't open app after 2s then auto download app.
+            }, 2000);
+        } else if (isIOS) {
+            // try to open TESLA app.
+            const ifr = document.createElement('iframe');
+            ifr.src = deepLink;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            setTimeout(() => {
+                document.body.removeChild(ifr);
+                window.location = 'https://apps.apple.com/cn/app/tesla/id582007913'; // fallback: if haven't open app after 2s then auto download app.
+            }, 2000);
+        }
+    </script>
 </body>
+
 </html>
