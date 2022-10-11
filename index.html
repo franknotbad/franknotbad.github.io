@@ -9,7 +9,7 @@
 
 <body>
     <script>
-        const deepLink = 'https://www.tesla.cn/_rs/referral?screen=referral_credits_screen';
+        const deepLink = 'https://ownership.tesla.cn/_rs/_rs/referral?screen=referral_credits_screen';
         const sniffOS = () => {
             const uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
             const isWeChat = /micromessenger/i.test(uaStr.toLowerCase());
@@ -36,11 +36,11 @@
 //             ifr.src = deepLink;
 //             ifr.style.display = 'none';
 //             document.body.appendChild(ifr);
-               window.location = deepLink; // try to open TESLA app.
+               window.location.href = deepLink; // try to open TESLA app.
 
             setTimeout(() => {
 //                 document.body.removeChild(ifr);
-                window.location = 'https://apps.apple.com/cn/app/tesla/id582007913'; // fallback: if haven't open app after 2s then auto download app.
+                window.location.href = 'https://apps.apple.com/cn/app/tesla/id582007913'; // fallback: if haven't open app after 2s then auto download app.
             }, 2000);
         }
     </script>
