@@ -32,12 +32,14 @@
             }, 2000);
         } else if (isIOS) {
             // try to open TESLA app.
-            const ifr = document.createElement('iframe');
-            ifr.src = deepLink;
-            ifr.style.display = 'none';
-            document.body.appendChild(ifr);
+//             const ifr = document.createElement('iframe');
+//             ifr.src = deepLink;
+//             ifr.style.display = 'none';
+//             document.body.appendChild(ifr);
+               window.location.href = deepLink; // try to open TESLA app.
+
             setTimeout(() => {
-                document.body.removeChild(ifr);
+//                 document.body.removeChild(ifr);
                 window.location = 'https://apps.apple.com/cn/app/tesla/id582007913'; // fallback: if haven't open app after 2s then auto download app.
             }, 2000);
         }
