@@ -25,9 +25,9 @@
         const { isWeChat, isAndroid, isIOS } = sniffOS();
         const trigger = () => {
             if (isWeChat && isAndroid) {
-                setShowWeChatView(true);
+                alert('请使用系统浏览器');
             } else if (isAndroid) {
-                window.location.href = deepLink; // try to open TESLA app.
+                window.location.href = 'tesla://ownership.tesla.cn/_rs/referral?screen=referral_credits_screen'; // try to open TESLA app.
                 setTimeout(() => {
                     window.location = 'https://www.tesla.cn/go/app'; // fallback: if haven't open app after 2s then auto download app.
                 }, 2000);
