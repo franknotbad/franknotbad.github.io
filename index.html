@@ -149,6 +149,7 @@
             }
             if (isIOS) {
                 var hasJumped = getCookie('jumpToAppFlag') === 'true';
+                alert(getCookie('jumpToAppFlag'));
                 if (hasJumped) {
                     removeCookie('jumpToAppFlag');
                     window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
