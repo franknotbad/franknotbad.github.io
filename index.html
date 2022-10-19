@@ -112,7 +112,7 @@
                 scheme = "tesla-eng";
             }
             if(true) {
-                if (window.location.hash === 'true') {
+                if (window.location.hash) {
                     redirectUrl = scheme + '://ownership.tesla.cn' + path;
                     window.location.hash = '';
                 } else {
