@@ -1,5 +1,4 @@
 
-
   <!doctype html>
       <html lang="zh-cn">
         <head>
@@ -28,6 +27,11 @@
             <script type="text/javascript">
   window.addEventListener('DOMContentLoaded', function () {
     (function () {
+        var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+        var isWeChat = /micromessenger/i.test(uaStr);
+        var isAndroid = /Android/i.test(uaStr);
+        var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+
         var title = getTarget('page-title');
         var friendsContent = getTarget('friends-content');
         var creditsContent = getTarget('credits-content');
@@ -83,11 +87,14 @@
         function getTarget(className) {
             return document.querySelector('.' + className);
         }
+        window.onDownloadClick = function () {
+            if (isAndroid) {
+                window.location = 'https://www.tesla.cn/go/app';
+            } else if (isIOS) {
+                window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
+            }
+        }
         window.onOpenClick = function () {
-            var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
-            var isWeChat = /micromessenger/i.test(uaStr);
-            var isAndroid = /Android/i.test(uaStr);
-            var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
             var redirectUrl = '';
             var scheme = 'https';
             var path = '/_rs/referral?screen=referral_credits_screen';
@@ -128,13 +135,13 @@
             box-shadow: none;
         }
         30% {
-            box-shadow: 0 0 70px 8px #00f2fe;
+            box-shadow: 0 0 70px 8px #708FFC;
         }
         60% {
-            box-shadow: 0 0 90px 16px #00f2fe;
+            box-shadow: 0 0 90px 16px #16DFFE;
         }
         100% {
-            box-shadow: 0 0 100px 45px #00f2fe;
+            box-shadow: 0 0 90px 34px #00F2FE;
         }
     }
     @keyframes show-box-shadow-desktop {
@@ -142,13 +149,13 @@
             box-shadow: none;
         }
         30% {
-            box-shadow: 0 0 70px 18px #00f2fe;
+            box-shadow: 0 0 70px 18px #708FFC;
         }
         60% {
-            box-shadow: 0 0 90px 45px #00f2fe;
+            box-shadow: 0 0 90px 45px #16DFFE;
         }
         100% {
-            box-shadow: 0 0 100px 67px #00f2fe;
+            box-shadow: 0 0 100px 67px #00F2FE;
         }
     }
     @keyframes text-up {
@@ -340,7 +347,7 @@
         height: 160px;
         width: 5132px;
         position: relative;
-        background-size: contain;
+        background-size: 856px 160px;
         right: calc(5032px - 100vw);
         background-image: url('/mobile_product1.png');
     }
@@ -348,7 +355,7 @@
         height: 160px;
         width: 5132px;
         position: relative;
-        background-size: contain;
+        background-size: 856px 160px;
         margin-top: 8px;
         right: calc(5032px - 100vw);
         margin-left: 85px;
@@ -416,6 +423,9 @@
         margin-top: 15px;
     }
     .show-box-shadow {
+        border-radius: 0.5px;
+        width: 1px;
+        height: 1px;
         animation: show-box-shadow 1.8s linear forwards;
         position: relative;
         top: -21px;
@@ -461,7 +471,7 @@
         align-items: center;
         margin: 20vh 0;
     }
-    .bottom button {
+    .bottom .open-box {
         width: calc(100vw - 48px);
         color: #fff;
         font-size: 14px;
@@ -471,11 +481,16 @@
         border-radius: 4px;
         padding: 8px 0;
     }
-    .bottom div {
-        font-size: 14px;
-        font-weight: 400;
-        margin-top: 20px;
+    .bottom .download-app {
+        width: calc(100vw - 48px);
         color: #fff;
+        font-size: 14px;
+        background: #2d2d2d;
+        font-weight: 500;
+        border-radius: 4px;
+        padding: 10px 0;
+        margin-top: 20px;
+        border: none;
     }
     .box-svg {
         background-image: url('/Vector.png');
@@ -714,8 +729,8 @@
                         <div class="download-info">下载最新版 Tesla App, 即可在线体验</div>
                     </div>
                     <div class="bottom">
-                        <button type="button" onClick="onOpenClick()">打开宝箱</button>
-                        <div>下载 Tesla App</div>
+                        <button class="open-box" type="button" onClick="onOpenClick()">打开宝箱</button>
+                        <button class="download-app" type="button" onClick="onDownloadClick()">下载 Tesla App</button>                        
                     </div>
                 </main>
                 <footer>
