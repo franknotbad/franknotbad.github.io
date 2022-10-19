@@ -117,6 +117,8 @@ window.addEventListener('DOMContentLoaded', function () {
             } else {
                 redirectUrl = scheme + '://www.tesla.cn' + path;
             }
+        } else {
+            redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
         }
         window.location.href = redirectUrl;
         if (isAndroid) {
