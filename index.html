@@ -109,10 +109,10 @@
                     document.title = '即将打开浏览器';
                     return;
                 }
-                scheme = "tesla-eng";
+                scheme = "tesla";
             }
             if(true) {
-                if (window.location.hash) {
+                if (window.location.hash === 'true') {
                     redirectUrl = scheme + '://ownership.tesla.cn' + path;
                     window.location.hash = '';
                 } else {
@@ -216,6 +216,7 @@
     body {
         margin: 0;
         background: #000;
+        font-family: "Gotham Book", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,PingFangSC-Regular, "Microsoft YaHei";
     }
     .wechat-page {
         display: none;
@@ -343,7 +344,7 @@
         position: relative;
         background-size: contain;
         right: calc(5032px - 100vw);
-        background-image: url('/static/downloadApp/cn/loot-box/mobile_product1.png');
+        background-image: url('/mobile_product1.png');
     }
     .awards-line-2 {
         height: 160px;
@@ -353,7 +354,7 @@
         margin-top: 8px;
         right: calc(5032px - 100vw);
         margin-left: 85px;
-        background-image: url('/static/downloadApp/cn/loot-box/mobile_product2.png');
+        background-image: url('/mobile_product2.png');
     }
     .box > .main-title {
         font-weight: 400;
@@ -369,7 +370,7 @@
         color: #fff;
     }
     .friends > .refer-friend {
-        background-image: url('/static/downloadApp/cn/loot-box/referFriend.png');
+        background-image: url('/referFriend.png');
         width: 235px;
         height: 376px;
         position: relative;
@@ -475,7 +476,7 @@
         color: #fff;
     }
     .box-svg {
-        background-image: url('/static/downloadApp/cn/loot-box/Vector.png');
+        background-image: url('/Vector.png');
     }
     .desktop .header-message {
         display: none;
@@ -639,7 +640,7 @@
         </head>
         <body>
             <div class="wechat-page">
-                <img src="/static/downloadApp/cn/loot-box/arrow.png" alt="path" />
+                <img src="/arrow.png" alt="path" />
                 <div>
                     <p>请点击右上角 ···</p>
                     <p>选择“在默认浏览器里打开”</p>
@@ -681,9 +682,9 @@
                     </div>
                     <div class="friends">
                         <div class="refer-friend">
-                            <img class="referral_contact1" src="/static/downloadApp/cn/loot-box/referral_contact1.png" />
-                            <img class="referral_contact2" src="/static/downloadApp/cn/loot-box/referral_contact2.png" />
-                            <img class="referral_contact3" src="/static/downloadApp/cn/loot-box/referral_contact3.png" />
+                            <img class="referral_contact1" src="/referral_contact1.png" />
+                            <img class="referral_contact2" src="/referral_contact2.png" />
+                            <img class="referral_contact3" src="/referral_contact3.png" />
                         </div>
                         <div class="friends-content text-content">
                             <div class="title">引荐亲友</div>
