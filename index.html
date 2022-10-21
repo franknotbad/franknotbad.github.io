@@ -1,663 +1,628 @@
 
   <!doctype html>
-      <html lang="zh-cn">
-        <head>
-            <meta charset="utf-8">
-            <meta id="viewport-tag" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0" />
-            <title>“宝箱”积分奖励</title>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=10;IE=Edge,chrome=1"/>
-            <meta property="og:title" content="Tesla" />
-            <meta property="og:image" content="https://tesla-cdn.thron.com/delivery/public/image/tesla/c03ebbeb-a9d2-4b24-a72d-6b2f905b116c/bvlatuR/std/1200x630/carshare-textmessage" /> 
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="apple-touch-icon" sizes="57x57" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
-            <link rel="apple-touch-icon" sizes="60x60" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
-            <link rel="apple-touch-icon" sizes="72x72" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
-            <link rel="apple-touch-icon" sizes="76x76" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
-            <link rel="apple-touch-icon" sizes="114x114" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
-            <link rel="apple-touch-icon" sizes="120x120" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
-            <link rel="apple-touch-icon" sizes="144x144" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
-            <link rel="apple-touch-icon" sizes="152x152" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
-            <link rel="icon" type="image/png" sizes="196x196" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
-            <link rel="icon" type="image/png" sizes="160x160" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
-            <link rel="icon" type="image/png" sizes="96x96" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
-            <link rel="icon" type="image/png" sizes="16x16" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
-            <link rel="icon" type="image/png" sizes="32x32" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
-            <link rel="icon" type="image/x-icon" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
-            <script type="text/javascript">
-  window.addEventListener('DOMContentLoaded', function () {
-    (function () {
-        var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
-        var isWeChat = /micromessenger/i.test(uaStr);
-        var isAndroid = /Android/i.test(uaStr);
-        var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+  <html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta id="viewport-tag" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0" />
+        <title>“宝箱”积分奖励</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=10;IE=Edge,chrome=1"/>
+        <meta property="og:title" content="Tesla" />
+        <meta property="og:image" content="https://tesla-cdn.thron.com/delivery/public/image/tesla/c03ebbeb-a9d2-4b24-a72d-6b2f905b116c/bvlatuR/std/1200x630/carshare-textmessage" /> 
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="196x196" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/x-icon" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
+        <script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function () {
+(function () {
+    var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+    var isWeChat = /micromessenger/i.test(uaStr);
+    var isAndroid = /Android/i.test(uaStr);
+    var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
 
-        var title = getTarget('page-title');
-        var friendsContent = getTarget('friends-content');
-        var creditsContent = getTarget('credits-content');
-        var awardsContent = getTarget('awards-content');
-    
-        var io = new IntersectionObserver(function (entries) {
-            if (Array.isArray(entries) && entries.length) {
-                entries.forEach(function (item) {
-                    if (item.target === title) {
-                        var headerMessage = getTarget('header-message');
-                        if (item.isIntersecting) {
-                            headerMessage.classList.remove('fixTop');
-                        } else {
-                            headerMessage.classList.add('fixTop');
-                        }
-                    }
-                    if (item.target === friendsContent) {
-                        if (item.isIntersecting) {
-                            getTarget('friends-content').classList.add('text-up');
-                            getTarget('referral_contact1').classList.add('referral-contact1-show');
-                            getTarget('referral_contact2').classList.add('referral-contact2-show');
-                            getTarget('referral_contact3').classList.add('referral-contact3-show');
-                        }
-                    } else if (item.target === creditsContent) {
-                        if (item.isIntersecting) {
-                            getTarget('credits-content').classList.add('text-up');
-                            getTarget('credits-svg').classList.add('credits-show');
-                        }
-                    } else if (item.target === awardsContent) {
-                        if (item.isIntersecting) {
-                            getTarget('awards-content').classList.add('text-up');
-                        }
-                    }
-                });
-            }
-        });
-        io.observe(title);
-        io.observe(friendsContent);
-        io.observe(creditsContent);
-        io.observe(awardsContent);
-        function detectIsDesktop() {
-            if (!isAndroid && !isIOS) {
-                document.body.classList.add('desktop');
-            }
+    var title = getTarget('page-title');
+    var friendsContent = getTarget('friends-content');
+    var creditsContent = getTarget('credits-content');
+    var awardsContent = getTarget('awards-content');
+
+    function detectIsDesktop() {
+        if (!isAndroid && !isIOS) {
+            document.body.classList.add('desktop');
         }
-        detectIsDesktop();
-        function getTarget(className) {
-            return document.querySelector('.' + className);
+    }
+    detectIsDesktop();
+    function getTarget(className) {
+        return document.querySelector('.' + className);
+    }
+    function showWechatPage() {
+        getTarget('loot-box').style.display = 'none';
+        getTarget('wechat-page').style.display = 'block';
+        document.title = '即将打开浏览器';
+    }
+    window.onDownloadClick = function () {
+        if (isWeChat) {
+            showWechatPage();
+            return;
         }
-        function showWechatPage() {
-            getTarget('loot-box').style.display = 'none';
-            getTarget('wechat-page').style.display = 'block';
-            document.title = '即将打开浏览器';
+        if (isAndroid) {
+            window.location = 'https://www.tesla.cn/go/app';
+        } else if (isIOS) {
+            window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
         }
-        window.onDownloadClick = function () {
+    }
+    window.onOpenClick = function () {
+        var redirectUrl = '';
+        var scheme = 'https';
+        var path = '/_rs/referral?screen=referral_credits_screen';
+        if (isAndroid) {
             if (isWeChat) {
                 showWechatPage();
                 return;
             }
-            if (isAndroid) {
-                window.location = 'https://www.tesla.cn/go/app';
-            } else if (isIOS) {
-                window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
-            }
+            scheme = "tesla-eng";
         }
-        window.onOpenClick = function () {
-            var redirectUrl = '';
-            var scheme = 'https';
-            var path = '/_rs/referral?screen=referral_credits_screen';
-            if (isAndroid) {
-                if (isWeChat) {
-                    showWechatPage();
-                    return;
-                }
-                scheme = "tesla-eng";
-            }
-            if(true) {
-                if (window.location.hash) {
-                    redirectUrl = scheme + '://ownership.tesla.cn' + path;
-                    window.location.hash = '';
-                } else {
-                    redirectUrl = scheme + '://www.tesla.cn' + path;
-                    window.location.hash = 'true';
-                }
+        if(true) {
+            if (window.location.hash) {
+                redirectUrl = scheme + '://ownership.tesla.cn' + path;
+                window.location.hash = '';
             } else {
-                redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
+                redirectUrl = scheme + '://www.tesla.cn' + path;
+                window.location.hash = 'true';
             }
-            window.location.href = redirectUrl;
-            if (isAndroid) {
-                setTimeout(function () {
-                    window.location = 'https://www.tesla.cn/go/app';
-                }, 2000);
-            } else if (isIOS && isWeChat) {
-                setTimeout(function () {
-                    showWechatPage();
-                }, 2000);
-            }
-        };
-    })(); 
+        } else {
+            redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
+        }
+        window.location.href = redirectUrl;
+        if (isAndroid) {
+            setTimeout(function () {
+                window.location = 'https://www.tesla.cn/go/app';
+            }, 2000);
+        } else if (isIOS && isWeChat) {
+            setTimeout(function () {
+                showWechatPage();
+            }, 2000);
+        }
+    };
+})(); 
 });
 </script>
-            
+        
 <style type="text/css">
-    @keyframes show-box-shadow {
-        0% {
-            box-shadow: none;
-        }
-        30% {
-            box-shadow: 0 0 70px 8px #708FFC;
-        }
-        60% {
-            box-shadow: 0 0 90px 16px #16DFFE;
-        }
-        100% {
-            box-shadow: 0 0 90px 34px #00F2FE;
-        }
+@keyframes show-box-shadow {
+    0% {
+        box-shadow: none;
     }
-    @keyframes show-box-shadow-desktop {
-        0% {
-            box-shadow: none;
-        }
-        30% {
-            box-shadow: 0 0 70px 18px #708FFC;
-        }
-        60% {
-            box-shadow: 0 0 90px 45px #16DFFE;
-        }
-        100% {
-            box-shadow: 0 0 100px 67px #00F2FE;
-        }
+    30% {
+        box-shadow: 0 0 70px 8px #708FFC;
     }
-    @keyframes text-up {
-        0% {
-            margin-top: 66px;
-            margin-bottom: 0px
-        }
-        100% {
-            margin-top: 46px;
-            margin-bottom: 20px;
-        }
+    60% {
+        box-shadow: 0 0 90px 16px #16DFFE;
     }
-    @keyframes credits-show {
-        0% {
-            margin-left: 40px;
-            margin-right: 0px;
-            opacity: 0;
-        }
-        100% {
-            margin-left: 0px;
-            margin-right: 40px;
-            opacity: 1;
-        }
+    100% {
+        box-shadow: 0 0 90px 34px #00F2FE;
     }
-    @keyframes pic-flow {
-        0% {
-            right: calc(5032px - 100vw);
-        }
-        100% {
-            right: calc(4176px - 100vw);
-        }
+}
+@keyframes show-box-shadow-desktop {
+    0% {
+        box-shadow: none;
     }
-    @keyframes referral-contact1-show {
-        0% {
-            right: 0px;
-            opacity: 0;
-        }
-        100% {
-            right: -23px;
-            opacity: 1;
-        }
+    30% {
+        box-shadow: 0 0 70px 18px #708FFC;
     }
-    @keyframes referral-contact2-show {
-        0% {
-            left: 15px;
-            opacity: 0;
-        }
-        100% {
-            left: -20px;
-            opacity: 1;
-        }
+    60% {
+        box-shadow: 0 0 90px 45px #16DFFE;
     }
-    @keyframes referral-contact3-show {
-        0% {
-            transform: scale(0.1);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
+    100% {
+        box-shadow: 0 0 100px 67px #00F2FE;
     }
-    body {
-        margin: 0;
-        background: #000;
-        font-family: "Gotham Book", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,PingFangSC-Regular, "Microsoft YaHei";
-    }
-    .wechat-page {
-        display: none;
-        width: 100vw;
-        height: 100vh;
-        background: #fff;
-        overflow: hidden;
-    }
-    .wechat-page img {
-        width: 77px;
-        position: absolute;
-        right: 35px;
-        top: 10px;
-    }
-    .wechat-page div {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 17px;
-        text-align: center;
-        margin-top: 195px;
-    }
-    .loot-box {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-        overflow-x: hidden;
-    }
-    header {
-        position: absolute;
-        width: 100%;
-    }
-    .header-message {
-        width: 100%;
-        min-height: 77px;
-        border-bottom: 1px solid #2f2e2e;
-        display: flex;
-        flex-direction: row;
-        background-color: #000;
-        padding: 18px 32px;
-        z-index: 10;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-
-    }
-    .header-message > button {
-        width: 76px;
-        min-width: 76px;
-        height: 40px;
-        margin-left: 50px;
-        border: none;
-        background-color: #3e6ae1;
-        color: #fff;
-        border-radius: 4px;
-        cursor: pointer;
-        padding: 10px 0;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .header-message-content {
-        color: #fff;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .page-title {
-        width: 100%;
-        height: 52px;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-    }
-    .page-title a {
-        height: 24px;
-    }
-    h1 {
-        border-left: 1px solid #fff;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 400;
-        margin-left: 14px;
-        padding-left: 14px;
-        line-height: 14px;
-    }
-    .box {
-        margin-top: calc(50vh - 116px);
-    }
-    .box > svg {
-        position: relative;
-        z-index: 1;
-    }
-    .friends {
-        margin-top: calc(50vh - 116px);
-    }
-    .box,
-    .friends {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .download-info {
-        display: none;
-    }
-    .credits {
-        margin-top: 30vh;
-        width: 100vw;
-    }
-    .credits > svg {
-        margin-left: 70px;
-        opacity: 0;
-        padding: 0 30px;
-    }
-    .awards {
-        display: flex;
-        flex-direction: column;
-        margin-top: 45vh;
-    }
-    .picFlowBox {
-        width: calc(100vw + 100px);
-        margin-left: -100px;
-    }
-    .awards-line-1 {
-        height: 160px;
-        width: 5132px;
-        position: relative;
-        background-size: 856px 160px;
-        right: calc(5032px - 100vw);
-        background-image: url('/mobile_product1.png');
-    }
-    .awards-line-2 {
-        height: 160px;
-        width: 5132px;
-        position: relative;
-        background-size: 856px 160px;
-        margin-top: 8px;
-        right: calc(5032px - 100vw);
-        margin-left: 85px;
-        background-image: url('/mobile_product2.png');
-    }
-    .box .main-title {
-        font-weight: 400;
-        padding-top: 20px;
-        font-size: 54px;
-        text-align: center;
-        color: #f6f6f6;
-    }
-    .box .main-desc {
-        font-weight: 400;
-        font-size: 14px;
-        margin-top: 10px;
-        line-height: 20px;
-        text-align: center;
-        color: #fff;
-    }
-    .friends > .refer-friend {
-        background-image: url('/referral_message.png');
-        width: 235px;
-        height: 376px;
-        background-size: 235px 376px;
-        position: relative;
-    }
-    .referral_contact1 {
-        width: 62px;
-        position: absolute;
-        opacity: 0;
-    }
-    .referral_contact2 {
-        width: 62px;
-        position: absolute;
-        opacity: 0;
-        top: 136px;
-        left: 15px;
-    }
-    .referral_contact3 {
-        position: absolute;
-        opacity: 0;
-        width: 62px;
-        transform: scale(0.1);
-        bottom: 90px;
-        right: -10px;
-    }
-    .text-content {
-        width: 100%;
+}
+@keyframes text-up {
+    0% {
         margin-top: 66px;
+        margin-bottom: 0px
     }
-    .text-content > .title {
-        color: #f3f3f3;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 36px;
-        padding: 0 30px;
+    100% {
+        margin-top: 46px;
+        margin-bottom: 20px;
     }
-    .text-content > .desc {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #fff;
-        padding: 0 30px;
-        margin-top: 15px;
+}
+@keyframes credits-show {
+    0% {
+        margin-left: 40px;
+        margin-right: 0px;
+        opacity: 0;
     }
-    .show-box-shadow {
-        border-radius: 0.5px;
-        width: 1px;
-        height: 1px;
-        animation: show-box-shadow 1.8s linear forwards;
-        position: relative;
-        top: -21px;
+    100% {
+        margin-left: 0px;
+        margin-right: 40px;
+        opacity: 1;
     }
-    .text-up {
-        animation: text-up 0.8s linear forwards;
+}
+@keyframes pic-flow {
+    0% {
+        right: calc(5032px - 100vw);
     }
-    .credits-show {
-        animation: credits-show 0.8s linear forwards;
+    100% {
+        right: calc(4176px - 100vw);
     }
-    .pic-flow {
-        animation-name: pic-flow;
-        animation-iteration-count: infinite;
-        animation-duration: 15s;
-        animation-timing-function: linear;
+}
+@keyframes referral-contact1-show {
+    0% {
+        right: 0px;
+        opacity: 0;
     }
-    .fixTop {
-        position: fixed;
-        top: 0;
-    }
-    .referral-contact1-show {
-        animation-name: referral-contact1-show;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        animation-timing-function: linear;
-    }
-    .referral-contact2-show {
-        animation-name: referral-contact2-show;
-        animation-duration: 0.4s;
-        animation-fill-mode: forwards;
-        animation-timing-function: linear;
-    }
-    .referral-contact3-show {
-        animation-name: referral-contact3-show;
-        animation-duration: 0.4s;
-        animation-delay: 0.1s;
-        animation-fill-mode: forwards;
-        animation-timing-function: linear;
-    }
-    .bottom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20vh 0;
-    }
-    .bottom .open-box {
-        width: calc(100vw - 48px);
-        color: #fff;
-        font-size: 14px;
-        background: #000;
-        border: 2px solid #fff;
-        font-weight: 500;
-        border-radius: 4px;
-        padding: 8px 0;
-    }
-    .bottom .download-app {
-        width: calc(100vw - 48px);
-        color: #fff;
-        font-size: 14px;
-        background: #2d2d2d;
-        font-weight: 500;
-        border-radius: 4px;
-        padding: 10px 0;
-        margin-top: 20px;
-        border: none;
-    }
-    .box-svg {
-        background-image: url('/Vector.png');
-    }
-    .desktop .header-message {
-        display: none;
-    }
-    .desktop .show-box-shadow {
-        animation: show-box-shadow-desktop 1.8s linear forwards;
-        top: -38px;
-    }
-    .desktop .box {
-        margin-top: 247px;
-    }
-    .desktop .box svg {
-        width: 120px;
-        height: 96px;
-    }
-    .desktop .download-info {
-        display: block;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18px;
-        margin-top: 120px;
-        color: #fff;
-    }
-    .desktop .main-title {
-        font-size: 148px;
-    }
-    .desktop .main-desc {
-        font-size: 16px;
-    }
-    .desktop .friends {
-        flex-direction: row;
-        justify-content: space-around;
-        max-width: 1000px;
-        margin: calc(50vh - 116px) auto 0;
-    }
-    .desktop .referral_contact1 {
+    100% {
         right: -23px;
+        opacity: 1;
+    }
+}
+@keyframes referral-contact2-show {
+    0% {
+        left: 15px;
         opacity: 0;
     }
-    .desktop .referral_contact2 {
+    100% {
         left: -20px;
+        opacity: 1;
+    }
+}
+@keyframes referral-contact3-show {
+    0% {
+        transform: scale(0.1);
         opacity: 0;
     }
-    .desktop .referral_contact3 {
+    100% {
         transform: scale(1);
-        opacity: 0;
+        opacity: 1;
     }
-    .desktop .refer-friend {
-        order: 1;
-    }
-    .desktop .text-content {
-        width: 452px;
-    }
-    .desktop .credits {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .desktop .credits > svg {
-        opacity: 0;
-        margin: 14px 50px 0 0;
+}
+body {
+    margin: 0;
+    background: #000;
+    font-family: "Gotham Book", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,PingFangSC-Regular, "Microsoft YaHei";
+}
+.wechat-page {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden;
+}
+.wechat-page img {
+    width: 77px;
+    position: absolute;
+    right: 35px;
+    top: 10px;
+}
+.wechat-page div {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: center;
+    margin-top: 195px;
+}
+.loot-box {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+header {
+    position: absolute;
+    width: 100%;
+}
+.header-message {
+    width: 100%;
+    min-height: 77px;
+    border-bottom: 1px solid #2f2e2e;
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    padding: 18px 32px;
+    z-index: 10;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+}
+.header-message > button {
+    width: 76px;
+    min-width: 76px;
+    height: 40px;
+    margin-left: 50px;
+    border: none;
+    background-color: #3e6ae1;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.header-message-content {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+.page-title {
+    width: 100%;
+    height: 52px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.page-title a {
+    height: 24px;
+}
+h1 {
+    border-left: 1px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 14px;
+    padding-left: 14px;
+    line-height: 14px;
+}
+.box {
+    margin-top: calc(50vh - 116px);
+}
+.box > svg {
+    position: relative;
+    z-index: 1;
+}
+.friends {
+    margin-top: calc(50vh - 116px);
+}
+.box,
+.friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.download-info {
+    display: none;
+}
+.credits {
+    margin-top: 30vh;
+    width: 100vw;
+}
+.credits > svg {
+    margin-left: 70px;
+    opacity: 0;
+    padding: 0 30px;
+}
+.awards {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45vh;
+}
+.picFlowBox {
+    width: calc(100vw + 100px);
+    margin-left: -100px;
+}
+.awards-line-1 {
+    height: 160px;
+    width: 5132px;
+    position: relative;
+    background-size: 856px 160px;
+    right: calc(5032px - 100vw);
+    background-image: url('/mobile_product1.png');
+}
+.awards-line-2 {
+    height: 160px;
+    width: 5132px;
+    position: relative;
+    background-size: 856px 160px;
+    margin-top: 8px;
+    right: calc(5032px - 100vw);
+    margin-left: 85px;
+    background-image: url('/mobile_product2.png');
+}
+.box .main-title {
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: 54px;
+    text-align: center;
+    color: #f6f6f6;
+}
+.box .main-desc {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+}
+.friends > .refer-friend {
+    background-image: url('/referral_message.png');
+    width: 235px;
+    height: 376px;
+    background-size: 235px 376px;
+    position: relative;
+}
+.referral_contact1 {
+    width: 62px;
+    position: absolute;
+    opacity: 0;
+}
+.referral_contact2 {
+    width: 62px;
+    position: absolute;
+    opacity: 0;
+    top: 136px;
+    left: 15px;
+}
+.referral_contact3 {
+    position: absolute;
+    opacity: 0;
+    width: 62px;
+    transform: scale(0.1);
+    bottom: 90px;
+    right: -10px;
+}
+.text-content {
+    width: 100%;
+    margin-top: 66px;
+}
+.text-content > .title {
+    color: #f3f3f3;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    padding: 0 30px;
+}
+.text-content > .desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    padding: 0 30px;
+    margin-top: 15px;
+}
+.show-box-shadow {
+    border-radius: 0.5px;
+    width: 1px;
+    height: 1px;
+    animation: show-box-shadow 1.8s linear forwards;
+    position: relative;
+    top: -21px;
+}
+.text-up {
+    animation: text-up 0.8s linear forwards;
+}
+.credits-show {
+    animation: credits-show 0.8s linear forwards;
+}
+.pic-flow {
+    animation-name: pic-flow;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+}
+.fixTop {
+    position: fixed;
+    top: 0;
+}
+.referral-contact1-show {
+    animation-name: referral-contact1-show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.referral-contact2-show {
+    animation-name: referral-contact2-show;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.referral-contact3-show {
+    animation-name: referral-contact3-show;
+    animation-duration: 0.4s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20vh 0;
+}
+.bottom .open-box {
+    width: calc(100vw - 48px);
+    color: #fff;
+    font-size: 14px;
+    background: #000;
+    border: 2px solid #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+.bottom .download-app {
+    width: calc(100vw - 48px);
+    color: #fff;
+    font-size: 14px;
+    background: #2d2d2d;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+}
+.box-svg {
+    background-image: url('/Vector.png');
+}
+.desktop .header-message {
+    display: none;
+}
+.desktop .show-box-shadow {
+    animation: show-box-shadow-desktop 1.8s linear forwards;
+    top: -38px;
+}
+.desktop .box {
+    margin-top: 247px;
+}
+.desktop .box svg {
+    width: 120px;
+    height: 96px;
+}
+.desktop .download-info {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 120px;
+    color: #fff;
+}
+.desktop .main-title {
+    font-size: 148px;
+}
+.desktop .main-desc {
+    font-size: 16px;
+}
+.desktop .friends {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: calc(50vh - 116px) auto 0;
+}
+.desktop .referral_contact1 {
+    right: -23px;
+    opacity: 0;
+}
+.desktop .referral_contact2 {
+    left: -20px;
+    opacity: 0;
+}
+.desktop .referral_contact3 {
+    transform: scale(1);
+    opacity: 0;
+}
+.desktop .refer-friend {
+    order: 1;
+}
+.desktop .text-content {
+    width: 452px;
+}
+.desktop .credits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.desktop .credits > svg {
+    opacity: 0;
+    margin: 14px 50px 0 0;
+    padding: 0;
+}
+.desktop .credits-content {
+    margin: 0;
+}
+.desktop .text-content .title {
+    font-weight: 400;
+    font-size: 48px;
+}
+.desktop .text-content .desc {
+    font-weight: 400;
+    margin-top: 24px;
+}
+.desktop .awards {
+    align-items: center;
+}
+.desktop .picFlowBox {
+    width: 860px;
+    overflow: hidden;
+    margin: 0;
+}
+.desktop .awards-content {
+    width: 860px;
+    text-align: left;
+}
+.desktop .awards-content > .title {
+    padding: 0;
+}
+.desktop .awards-content > .desc {
+    padding: 0;
+}
+.desktop .bottom {
+    display: none;
+}
+.desktop main {
+    margin-bottom: 250px;
+}
+footer {
+    font-size: 12px;
+    line-height: 1.414;
+    inline-size: 100%;
+    margin-bottom: 60px;
+}
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+footer li {
+    margin: 4px 0;
+}
+footer a,
+footer a:hover {
+    box-shadow: unset;
+    color: #fff;
+    text-decoration: none;
+}
+footer li:first-child {
+    padding: 8px 8px 8px 0;
+}
+@media (max-width: 639px) {
+    footer li:first-child {
         padding: 0;
     }
-    .desktop .credits-content {
-        margin: 0;
-    }
-    .desktop .text-content .title {
-        font-weight: 400;
-        font-size: 48px;
-    }
-    .desktop .text-content .desc {
-        font-weight: 400;
-        margin-top: 24px;
-    }
-    .desktop .awards {
-        align-items: center;
-    }
-    .desktop .picFlowBox {
-        width: 860px;
-        overflow: hidden;
-        margin: 0;
-    }
-    .desktop .awards-content {
-        width: 860px;
-        text-align: left;
-    }
-    .desktop .awards-content > .title {
-        padding: 0;
-    }
-    .desktop .awards-content > .desc {
-        padding: 0;
-    }
-    .desktop .bottom {
+    .hide_on_mobile {
         display: none;
     }
-    .desktop main {
-        margin-bottom: 250px;
-    }
-    footer {
-        font-size: 12px;
-        line-height: 1.414;
-        inline-size: 100%;
-        margin-bottom: 60px;
-    }
-    footer ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: column nowrap;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+}
+@media (min-width: 640px) {
+    footer > ul {
+        flex-flow: row wrap;
     }
     footer li {
-        margin: 4px 0;
-    }
-    footer a,
-    footer a:hover {
-        box-shadow: unset;
-        color: #fff;
-        text-decoration: none;
+        padding: 8px;
     }
     footer li:first-child {
-        padding: 8px 8px 8px 0;
+        padding-inline-start: 0;
     }
-    @media (max-width: 639px) {
-        footer li:first-child {
-            padding: 0;
-        }
-        .hide_on_mobile {
-            display: none;
-        }
+    footer li:last-child {
+        padding-inline-end: 0;
     }
-    @media (min-width: 640px) {
-        footer > ul {
-            flex-flow: row wrap;
-        }
-        footer li {
-            padding: 8px;
-        }
-        footer li:first-child {
-            padding-inline-start: 0;
-        }
-        footer li:last-child {
-            padding-inline-end: 0;
-        }
-    }
+}
 </style>
-        </head>
-        <body>
-            <div class="wechat-page">
-                <img src="/arrow.png" alt="path" />
-                <div>
-                    <p>请点击右上角 ···</p>
-                    <p>选择“在默认浏览器里打开”</p>
-                </div>
+    </head>
+    <body>
+        <div class="wechat-page">
+            <img src="/arrow.png" alt="path" />
+            <div>
+                <p>请点击右上角 ···</p>
+                <p>选择“在默认浏览器里打开”</p>
             </div>
-            <div class="loot-box">
-                  <button class="open-box" type="button" onClick="onOpenClick()">测试</button>
-            </div>
-        </body>
+        </div>
+        <div class="loot-box">
+            <button class="open-box" type="button" onClick="onOpenClick()">打开宝箱</button>
+        </div>
+    </body>
 </html>
