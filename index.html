@@ -90,7 +90,7 @@
                         }
                         scheme = "tesla-eng";
                     }
-                    if (false) {
+                    if (true) {
                         if (window.location.hash) {
                             redirectUrl = scheme + '://ownership.tesla.cn' + path;
                             window.location.hash = '';
@@ -102,15 +102,15 @@
                         redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
                     }
                     window.location.href = redirectUrl;
-//                     if (isAndroid) {
-//                         setTimeout(function () {
-//                             window.location = 'https://www.tesla.cn/go/app';
-//                         }, 2000);
-//                     } else if (isIOS && isWeChat) {
-//                         setTimeout(function () {
-//                             window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
-//                         }, 2000);
-//                     }
+                    if (isAndroid) {
+                        setTimeout(function () {
+                            window.location = 'https://www.tesla.cn/go/app';
+                        }, 2000);
+                    } else if (isIOS && isWeChat) {
+                        setTimeout(function () {
+                            window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
+                        }, 2000);
+                    }
                 };
             })();
         });
