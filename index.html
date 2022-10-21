@@ -1,1 +1,755 @@
 
+
+  <!doctype html>
+      <html lang="zh-cn">
+        <head>
+            <meta charset="utf-8">
+            <meta id="viewport-tag" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0" />
+            <title>“宝箱”积分奖励</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=10;IE=Edge,chrome=1"/>
+            <meta property="og:title" content="Tesla" />
+            <meta property="og:image" content="https://tesla-cdn.thron.com/delivery/public/image/tesla/c03ebbeb-a9d2-4b24-a72d-6b2f905b116c/bvlatuR/std/1200x630/carshare-textmessage" /> 
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="apple-touch-icon" sizes="57x57" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
+            <link rel="icon" type="image/png" sizes="196x196" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
+            <link rel="icon" type="image/png" sizes="160x160" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
+            <link rel="icon" type="image/png" sizes="96x96" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
+            <link rel="icon" type="image/x-icon" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
+            <script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', function () {
+    (function () {
+        var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+        var isWeChat = /micromessenger/i.test(uaStr);
+        var isAndroid = /Android/i.test(uaStr);
+        var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+
+        var title = getTarget('page-title');
+        var friendsContent = getTarget('friends-content');
+        var creditsContent = getTarget('credits-content');
+        var awardsContent = getTarget('awards-content');
+    
+        var io = new IntersectionObserver(function (entries) {
+            if (Array.isArray(entries) && entries.length) {
+                entries.forEach(function (item) {
+                    if (item.target === title) {
+                        var headerMessage = getTarget('header-message');
+                        if (item.isIntersecting) {
+                            headerMessage.classList.remove('fixTop');
+                        } else {
+                            headerMessage.classList.add('fixTop');
+                        }
+                    }
+                    if (item.target === friendsContent) {
+                        if (item.isIntersecting) {
+                            getTarget('friends-content').classList.add('text-up');
+                            getTarget('referral_contact1').classList.add('referral-contact1-show');
+                            getTarget('referral_contact2').classList.add('referral-contact2-show');
+                            getTarget('referral_contact3').classList.add('referral-contact3-show');
+                        }
+                    } else if (item.target === creditsContent) {
+                        if (item.isIntersecting) {
+                            getTarget('credits-content').classList.add('text-up');
+                            getTarget('credits-svg').classList.add('credits-show');
+                        }
+                    } else if (item.target === awardsContent) {
+                        if (item.isIntersecting) {
+                            getTarget('awards-content').classList.add('text-up');
+                        }
+                    }
+                });
+            }
+        });
+        io.observe(title);
+        io.observe(friendsContent);
+        io.observe(creditsContent);
+        io.observe(awardsContent);
+        function detectIsDesktop() {
+            if (!isAndroid && !isIOS) {
+                document.body.classList.add('desktop');
+            }
+        }
+        detectIsDesktop();
+        function getTarget(className) {
+            return document.querySelector('.' + className);
+        }
+        function showWechatPage() {
+            getTarget('loot-box').style.display = 'none';
+            getTarget('wechat-page').style.display = 'block';
+            document.title = '即将打开浏览器';
+        }
+        window.onDownloadClick = function () {
+            if (isWeChat) {
+                showWechatPage();
+                return;
+            }
+            if (isAndroid) {
+                window.location = 'https://www.tesla.cn/go/app';
+            } else if (isIOS) {
+                window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
+            }
+        }
+        window.onOpenClick = function () {
+            var redirectUrl = '';
+            var scheme = 'https';
+            var path = '/_rs/referral?screen=referral_credits_screen';
+            if (isAndroid) {
+                if (isWeChat) {
+                    showWechatPage();
+                    return;
+                }
+                scheme = "tesla-eng";
+            }
+            if(true) {
+                if (window.location.hash) {
+                    redirectUrl = scheme + '://ownership.tesla.cn' + path;
+                    window.location.hash = '';
+                } else {
+                    redirectUrl = scheme + '://www.tesla.cn' + path;
+                    window.location.hash = 'true';
+                }
+            } else {
+                redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
+            }
+            window.location.href = redirectUrl;
+            if (isAndroid) {
+                setTimeout(function () {
+                    window.location = 'https://www.tesla.cn/go/app';
+                }, 2000);
+            } else if (isIOS && isWeChat) {
+                setTimeout(function () {
+                    showWechatPage();
+                }, 2000);
+            }
+        };
+    })(); 
+});
+</script>
+            
+<style type="text/css">
+    @keyframes show-box-shadow {
+        0% {
+            box-shadow: none;
+        }
+        30% {
+            box-shadow: 0 0 70px 8px #708FFC;
+        }
+        60% {
+            box-shadow: 0 0 90px 16px #16DFFE;
+        }
+        100% {
+            box-shadow: 0 0 90px 34px #00F2FE;
+        }
+    }
+    @keyframes show-box-shadow-desktop {
+        0% {
+            box-shadow: none;
+        }
+        30% {
+            box-shadow: 0 0 70px 18px #708FFC;
+        }
+        60% {
+            box-shadow: 0 0 90px 45px #16DFFE;
+        }
+        100% {
+            box-shadow: 0 0 100px 67px #00F2FE;
+        }
+    }
+    @keyframes text-up {
+        0% {
+            margin-top: 66px;
+            margin-bottom: 0px
+        }
+        100% {
+            margin-top: 46px;
+            margin-bottom: 20px;
+        }
+    }
+    @keyframes credits-show {
+        0% {
+            margin-left: 40px;
+            margin-right: 0px;
+            opacity: 0;
+        }
+        100% {
+            margin-left: 0px;
+            margin-right: 40px;
+            opacity: 1;
+        }
+    }
+    @keyframes pic-flow {
+        0% {
+            right: calc(5032px - 100vw);
+        }
+        100% {
+            right: calc(4176px - 100vw);
+        }
+    }
+    @keyframes referral-contact1-show {
+        0% {
+            right: 0px;
+            opacity: 0;
+        }
+        100% {
+            right: -23px;
+            opacity: 1;
+        }
+    }
+    @keyframes referral-contact2-show {
+        0% {
+            left: 15px;
+            opacity: 0;
+        }
+        100% {
+            left: -20px;
+            opacity: 1;
+        }
+    }
+    @keyframes referral-contact3-show {
+        0% {
+            transform: scale(0.1);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    body {
+        margin: 0;
+        background: #000;
+        font-family: "Gotham Book", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,PingFangSC-Regular, "Microsoft YaHei";
+    }
+    .wechat-page {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        overflow: hidden;
+    }
+    .wechat-page img {
+        width: 77px;
+        position: absolute;
+        right: 35px;
+        top: 10px;
+    }
+    .wechat-page div {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: center;
+        margin-top: 195px;
+    }
+    .loot-box {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+    }
+    header {
+        position: absolute;
+        width: 100%;
+    }
+    .header-message {
+        width: 100%;
+        min-height: 77px;
+        border-bottom: 1px solid #2f2e2e;
+        display: flex;
+        flex-direction: row;
+        background-color: #000;
+        padding: 18px 32px;
+        z-index: 10;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+    }
+    .header-message > button {
+        width: 76px;
+        min-width: 76px;
+        height: 40px;
+        margin-left: 50px;
+        border: none;
+        background-color: #3e6ae1;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .header-message-content {
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .page-title {
+        width: 100%;
+        height: 52px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+    .page-title a {
+        height: 24px;
+    }
+    h1 {
+        border-left: 1px solid #fff;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 14px;
+        padding-left: 14px;
+        line-height: 14px;
+    }
+    .box {
+        margin-top: calc(50vh - 116px);
+    }
+    .box > svg {
+        position: relative;
+        z-index: 1;
+    }
+    .friends {
+        margin-top: calc(50vh - 116px);
+    }
+    .box,
+    .friends {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .download-info {
+        display: none;
+    }
+    .credits {
+        margin-top: 30vh;
+        width: 100vw;
+    }
+    .credits > svg {
+        margin-left: 70px;
+        opacity: 0;
+        padding: 0 30px;
+    }
+    .awards {
+        display: flex;
+        flex-direction: column;
+        margin-top: 45vh;
+    }
+    .picFlowBox {
+        width: calc(100vw + 100px);
+        margin-left: -100px;
+    }
+    .awards-line-1 {
+        height: 160px;
+        width: 5132px;
+        position: relative;
+        background-size: 856px 160px;
+        right: calc(5032px - 100vw);
+        background-image: url('/mobile_product1.png');
+    }
+    .awards-line-2 {
+        height: 160px;
+        width: 5132px;
+        position: relative;
+        background-size: 856px 160px;
+        margin-top: 8px;
+        right: calc(5032px - 100vw);
+        margin-left: 85px;
+        background-image: url('/mobile_product2.png');
+    }
+    .box .main-title {
+        font-weight: 400;
+        padding-top: 20px;
+        font-size: 54px;
+        text-align: center;
+        color: #f6f6f6;
+    }
+    .box .main-desc {
+        font-weight: 400;
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+    }
+    .friends > .refer-friend {
+        background-image: url('/referral_message.png');
+        width: 235px;
+        height: 376px;
+        background-size: 235px 376px;
+        position: relative;
+    }
+    .referral_contact1 {
+        width: 62px;
+        position: absolute;
+        opacity: 0;
+    }
+    .referral_contact2 {
+        width: 62px;
+        position: absolute;
+        opacity: 0;
+        top: 136px;
+        left: 15px;
+    }
+    .referral_contact3 {
+        position: absolute;
+        opacity: 0;
+        width: 62px;
+        transform: scale(0.1);
+        bottom: 90px;
+        right: -10px;
+    }
+    .text-content {
+        width: 100%;
+        margin-top: 66px;
+    }
+    .text-content > .title {
+        color: #f3f3f3;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 36px;
+        padding: 0 30px;
+    }
+    .text-content > .desc {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        padding: 0 30px;
+        margin-top: 15px;
+    }
+    .show-box-shadow {
+        border-radius: 0.5px;
+        width: 1px;
+        height: 1px;
+        animation: show-box-shadow 1.8s linear forwards;
+        position: relative;
+        top: -21px;
+    }
+    .text-up {
+        animation: text-up 0.8s linear forwards;
+    }
+    .credits-show {
+        animation: credits-show 0.8s linear forwards;
+    }
+    .pic-flow {
+        animation-name: pic-flow;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+    }
+    .fixTop {
+        position: fixed;
+        top: 0;
+    }
+    .referral-contact1-show {
+        animation-name: referral-contact1-show;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    .referral-contact2-show {
+        animation-name: referral-contact2-show;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    .referral-contact3-show {
+        animation-name: referral-contact3-show;
+        animation-duration: 0.4s;
+        animation-delay: 0.1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20vh 0;
+    }
+    .bottom .open-box {
+        width: calc(100vw - 48px);
+        color: #fff;
+        font-size: 14px;
+        background: #000;
+        border: 2px solid #fff;
+        font-weight: 500;
+        border-radius: 4px;
+        padding: 8px 0;
+    }
+    .bottom .download-app {
+        width: calc(100vw - 48px);
+        color: #fff;
+        font-size: 14px;
+        background: #2d2d2d;
+        font-weight: 500;
+        border-radius: 4px;
+        padding: 10px 0;
+        margin-top: 20px;
+        border: none;
+    }
+    .box-svg {
+        background-image: url('/Vector.png');
+    }
+    .desktop .header-message {
+        display: none;
+    }
+    .desktop .show-box-shadow {
+        animation: show-box-shadow-desktop 1.8s linear forwards;
+        top: -38px;
+    }
+    .desktop .box {
+        margin-top: 247px;
+    }
+    .desktop .box svg {
+        width: 120px;
+        height: 96px;
+    }
+    .desktop .download-info {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 120px;
+        color: #fff;
+    }
+    .desktop .main-title {
+        font-size: 148px;
+    }
+    .desktop .main-desc {
+        font-size: 16px;
+    }
+    .desktop .friends {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1000px;
+        margin: calc(50vh - 116px) auto 0;
+    }
+    .desktop .referral_contact1 {
+        right: -23px;
+        opacity: 0;
+    }
+    .desktop .referral_contact2 {
+        left: -20px;
+        opacity: 0;
+    }
+    .desktop .referral_contact3 {
+        transform: scale(1);
+        opacity: 0;
+    }
+    .desktop .refer-friend {
+        order: 1;
+    }
+    .desktop .text-content {
+        width: 452px;
+    }
+    .desktop .credits {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .desktop .credits > svg {
+        opacity: 0;
+        margin: 14px 50px 0 0;
+        padding: 0;
+    }
+    .desktop .credits-content {
+        margin: 0;
+    }
+    .desktop .text-content .title {
+        font-weight: 400;
+        font-size: 48px;
+    }
+    .desktop .text-content .desc {
+        font-weight: 400;
+        margin-top: 24px;
+    }
+    .desktop .awards {
+        align-items: center;
+    }
+    .desktop .picFlowBox {
+        width: 860px;
+        overflow: hidden;
+        margin: 0;
+    }
+    .desktop .awards-content {
+        width: 860px;
+        text-align: left;
+    }
+    .desktop .awards-content > .title {
+        padding: 0;
+    }
+    .desktop .awards-content > .desc {
+        padding: 0;
+    }
+    .desktop .bottom {
+        display: none;
+    }
+    .desktop main {
+        margin-bottom: 250px;
+    }
+    footer {
+        font-size: 12px;
+        line-height: 1.414;
+        inline-size: 100%;
+        margin-bottom: 60px;
+    }
+    footer ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    footer li {
+        margin: 4px 0;
+    }
+    footer a,
+    footer a:hover {
+        box-shadow: unset;
+        color: #fff;
+        text-decoration: none;
+    }
+    footer li:first-child {
+        padding: 8px 8px 8px 0;
+    }
+    @media (max-width: 639px) {
+        footer li:first-child {
+            padding: 0;
+        }
+        .hide_on_mobile {
+            display: none;
+        }
+    }
+    @media (min-width: 640px) {
+        footer > ul {
+            flex-flow: row wrap;
+        }
+        footer li {
+            padding: 8px;
+        }
+        footer li:first-child {
+            padding-inline-start: 0;
+        }
+        footer li:last-child {
+            padding-inline-end: 0;
+        }
+    }
+</style>
+        </head>
+        <body>
+            <div class="wechat-page">
+                <img src="/arrow.png" alt="path" />
+                <div>
+                    <p>请点击右上角 ···</p>
+                    <p>选择“在默认浏览器里打开”</p>
+                </div>
+            </div>
+            <div class="loot-box">
+                <header>
+                    <div class="page-title">
+                        <a href="https://www.tesla.cn" title="Tesla, Inc">
+                            <svg width="100" height="24" viewBox="0 0 129 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.881636 1.55111C0.456538 1.13173 0.152028 0.605764 0 0.0282917V-0.000976562H15.0894V0.0282917C14.9324 0.601668 14.6274 1.1237 14.205 1.54207C13.7827 1.96043 13.2578 2.26044 12.6829 2.41203H8.92683L8.71545 2.48683V11.9633H6.37073V2.48683L6.17886 2.41203H2.41626C1.83678 2.26784 1.30674 1.97049 0.881636 1.55111Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M99.3918 11.0668C99.0362 11.4774 98.585 11.7942 98.0781 11.9892L87.3789 11.9827V0.0152588H89.7106V9.63477H100.117C99.9965 10.1644 99.7474 10.6562 99.3918 11.0668Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M61.2033 2.37302H69.4472C70.6895 2.01204 71.7236 1.0722 71.9871 0.00878906L58.8944 0.0283013V7.09172H69.6261V9.57302H61.2228C60.5768 9.73906 59.9738 10.0415 59.4544 10.4599C58.935 10.8784 58.5112 11.4032 58.2114 11.999H71.8992V4.7405H61.2033V2.37302Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M115.59 11.986V4.74695L128.677 4.75996V11.986H126.358V7.16971H117.909V11.986H115.59Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M32.6862 2.39902H41.626C42.2071 2.25562 42.738 1.95632 43.1616 1.53338C43.5851 1.11044 43.8851 0.579924 44.0293 -0.000976562H30.2634C30.4112 0.581401 30.7148 1.11253 31.1416 1.53537C31.5685 1.95821 32.1024 2.25678 32.6862 2.39902Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M41.626 7.13071H32.6862C32.1026 6.98814 31.5688 6.68946 31.142 6.26667C30.7152 5.84388 30.4115 5.31293 30.2634 4.73071H44.0455C43.8997 5.31348 43.5971 5.84521 43.1706 6.26828C42.7441 6.69134 42.2099 6.9896 41.626 7.13071Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M32.6862 11.9892H41.626C42.2101 11.8484 42.7444 11.5503 43.171 11.1272C43.5976 10.7041 43.9 10.1722 44.0455 9.58923H30.2634C30.4112 10.1716 30.7148 10.7027 31.1416 11.1256C31.5685 11.5484 32.1024 11.847 32.6862 11.9892Z" fill="white" fill-opacity="0.9"/>
+                                <path d="M126.576 2.40878H117.652V2.39902C117.068 2.25645 116.535 1.95777 116.108 1.53498C115.681 1.1122 115.377 0.581242 115.229 -0.000976562H128.998C128.853 0.583516 128.55 1.11704 128.123 1.54181C127.696 1.96658 127.161 2.2664 126.576 2.40878Z" fill="white" fill-opacity="0.9"/>
+                            </svg>
+                        </a>
+                        <h1>“宝箱”积分奖励</h1>
+                    </div>
+                    <div class="header-message">
+                        <div class="header-message-content">打开 Tesla App 使用宝箱引荐亲友，赚取积分</div>
+                        <button type="button" onClick="onOpenClick()">打开</button>
+                    </div>
+                </header>
+                <main>
+                    <div class="box">
+                        <svg width="61" height="48" viewBox="0 0 61 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5 0C7.21573 0 0.5 6.71573 0.5 15V19C0.5 19.2761 0.723857 19.5 1 19.5H23.5C23.6381 19.5 23.75 19.3881 23.75 19.25V18.768C23.75 15.8685 26.1005 13.518 29 13.518H32C34.8995 13.518 37.25 15.8685 37.25 18.768V19.25C37.25 19.3881 37.3619 19.5 37.5 19.5H60C60.2761 19.5 60.5 19.2761 60.5 19V15C60.5 6.71573 53.7843 0 45.5 0H15.5Z" fill="#F6F6F6"/>
+                            <path d="M60.5 24.5C60.5 24.2239 60.2761 24 60 24H37.5C37.3619 24 37.25 24.1119 37.25 24.25V24.768C37.25 27.6675 34.8995 30.018 32 30.018H29C26.1005 30.018 23.75 27.6675 23.75 24.768V24.25C23.75 24.1119 23.6381 24 23.5 24H1C0.723858 24 0.5 24.2239 0.5 24.5V42.75C0.5 45.6495 2.8505 48 5.75 48H55.25C58.1495 48 60.5 45.6495 60.5 42.75V24.5Z" fill="#F6F6F6"/>
+                            <path d="M29 18.018C28.5858 18.018 28.25 18.3538 28.25 18.768V24.768C28.25 25.1822 28.5858 25.518 29 25.518H32C32.4142 25.518 32.75 25.1822 32.75 24.768V18.768C32.75 18.3538 32.4142 18.018 32 18.018H29Z" fill="#F6F6F6"/>
+                        </svg>
+                        <div class="show-box-shadow"></div>
+                        <div class="text-up">
+                            <div class="main-title">宝箱</div>
+                            <div class="main-desc">全新上线</div>
+                        </div> 
+                        <div class="download-info">下载最新版 Tesla App, 即可在线体验</div>
+                    </div>
+                    <div class="friends">
+                        <div class="refer-friend">
+                            <img class="referral_contact1" src="/referral_contact1.png" />
+                            <img class="referral_contact2" src="/referral_contact2.png" />
+                            <img class="referral_contact3" src="/referral_contact3.png" />
+                        </div>
+                        <div class="friends-content text-content">
+                            <div class="title">引荐亲友</div>
+                            <div class="desc">通过“宝箱”分享您的引荐链接，引荐亲友购买符合条件的 Tesla 产品，您和亲友都将获得积分奖励。引荐越多，奖项越多。有资格的引荐人，更有机会参与“宝箱特别激励计划”。24个月完全自动驾驶能力（FSD）免费使用权、12个月Model 3/Model Y后轮驱动版免费使用权等你抽取。</div>
+                        </div>
+                    </div>
+                    <div class="credits">
+                        <svg class="credits-svg" width="147" height="112" viewBox="0 0 147 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_119_3544)">
+                                <path d="M73 3H90.75C120.159 3 144 26.7289 144 56C144 85.2711 120.159 109 90.75 109H73" stroke="#8D8D8D" stroke-width="5"/>
+                                <path d="M56 3H73.75C103.159 3 127 26.7289 127 56C127 85.2711 103.159 109 73.75 109H56" stroke="#BBBBBB" stroke-width="5"/>
+                                <path d="M56 109C85.2711 109 109 85.2711 109 56C109 26.7289 85.2711 3 56 3C26.7289 3 3 26.7289 3 56C3 85.2711 26.7289 109 56 109Z" stroke="white" stroke-width="5"/>
+                                <path d="M60.7028 29.0546L38.3139 56.5981C37.443 57.6695 37.6056 59.2441 38.677 60.115C39.1227 60.4773 39.6795 60.675 40.2539 60.675H51.3775C51.6537 60.675 51.8775 60.8989 51.8775 61.175C51.8775 61.21 51.8739 61.2449 51.8666 61.2792L47.9121 79.8478C47.6245 81.1982 48.4861 82.5261 49.8365 82.8137C50.7547 83.0093 51.705 82.6739 52.2972 81.9455L74.6861 54.4019C75.557 53.3305 75.3944 51.756 74.323 50.8851C73.8773 50.5228 73.3205 50.325 72.7461 50.325H61.6225C61.3463 50.325 61.1225 50.1012 61.1225 49.825C61.1225 49.79 61.1261 49.7551 61.1334 49.7209L65.0879 31.1522C65.3755 29.8018 64.5139 28.4739 63.1635 28.1863C62.2453 27.9908 61.2949 28.3261 60.7028 29.0546Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_119_3544">
+                                <rect width="147" height="112" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <div class="credits-content text-content">
+                            <div class="title">查看积分</div>
+                            <div class="desc">访问“宝箱”，查看您获取的积分总额和具体活动规则。</div>
+                        </div>
+                    </div>
+                    <div class="awards">
+                        <div class="picFlowBox">
+                            <div class="awards-line-1 pic-flow"></div>
+                            <div class="awards-line-2 pic-flow"></div>
+                        </div>
+                        <div class="awards-content text-content">
+                            <div class="title">兑换奖品</div>
+                            <div class="desc">前往“宝箱”中的积分商店兑换您喜爱的奖品，奖品包括车辆配件和周边精品、车载软件包、超级充电里程额度等。</div>
+                        </div>
+                        <div class="download-info">下载最新版 Tesla App, 即可在线体验</div>
+                    </div>
+                    <div class="bottom">
+                        <button class="open-box" type="button" onClick="onOpenClick()">打开宝箱</button>
+                        <button class="download-app" type="button" onClick="onDownloadClick()">下载 Tesla App</button>                        
+                    </div>
+                </main>
+                <footer>
+                    <ul>
+                        <li><a href="/about?redirect=no" title="Tesla © 2022" aria-label="Tesla © 2022">Tesla © 2022</a></li>
+                        <li><a href="https://beian.miit.gov.cn" title="沪ICP备2021004806号-1" aria-label="沪ICP备2021004806号-1">沪ICP备2021004806号-1</a></li>
+                        <li><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502017892"
+                            title="沪公网安备 31011502017892 号" aria-label="沪公网安备 31011502017892 号">沪公网安备 31011502017892 号</a></li>
+                        <li><a href="/about/legal?redirect=no" title="隐私和法律" aria-label="隐私和法律">隐私和法律</a></li>
+                        <li class="hide_on_mobile"><a href="/contact?redirect=no" title="联系我们" aria-label="联系我们">联系我们</a></li>
+                        <li class="hide_on_mobile"><a href="/careers?redirect=no" title="工作机会" aria-label="工作机会">工作机会</a></li>
+                    </ul>
+                </footer>
+            </div>
+        </body>
+</html>
