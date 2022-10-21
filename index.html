@@ -1,1 +1,120 @@
 
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta id="viewport-tag" name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0" />
+    <title>“宝箱”积分奖励计划</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=Edge,chrome=1" />
+    <meta property="og:title" content="Tesla" />
+    <meta property="og:image"
+        content="https://tesla-cdn.thron.com/delivery/public/image/tesla/c03ebbeb-a9d2-4b24-a72d-6b2f905b116c/bvlatuR/std/1200x630/carshare-textmessage" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="196x196"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
+    <link rel="icon" type="image/png" sizes="160x160"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', function () {
+            (function () {
+                var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+                var isWeChat = /micromessenger/i.test(uaStr);
+                var isAndroid = /Android/i.test(uaStr);
+                var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+
+                var title = getTarget('page-title');
+                var friendsContent = getTarget('friends-content');
+                var creditsContent = getTarget('credits-content');
+                var awardsContent = getTarget('awards-content');
+
+                function detectIsDesktop() {
+                    if (!isAndroid && !isIOS) {
+                        document.body.classList.add('desktop');
+                    }
+                }
+                detectIsDesktop();
+                function getTarget(className) {
+                    return document.querySelector('.' + className);
+                }
+                window.onDownloadClick = function () {
+                    if (isWeChat) {
+                        getTarget('loot-box').style.display = 'none';
+                        getTarget('wechat-page').style.display = 'block';
+                        document.title = '即将打开浏览器';
+                        return;
+                    }
+                    if (isAndroid) {
+                        window.location = 'https://www.tesla.cn/go/app';
+                    } else if (isIOS) {
+                        window.location = 'https://apps.apple.com/cn/app/tesla/id582007913';
+                    }
+                }
+                window.onOpenClick = function () {
+                    var redirectUrl = '';
+                    var scheme = 'https';
+                    var path = '/_rs/referral?screen=referral_credits_screen';
+                    if (isAndroid) {
+                        if (isWeChat) {
+                            getTarget('loot-box').style.display = 'none';
+                            getTarget('wechat-page').style.display = 'block';
+                            document.title = '即将打开浏览器';
+                            return;
+                        }
+                        scheme = "tesla";
+                    }
+                    if (true) {
+                        if (window.location.hash === 'true') {
+                            redirectUrl = scheme + '://ownership-web.tesla.cn' + path;
+                            window.location.hash = '';
+                        } else {
+                            redirectUrl = scheme + '://ownership-web.tesla.cn' + path;
+                            window.location.hash = 'true';
+                        }
+                    } else {
+                        redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
+                    }
+                    window.location.href = redirectUrl;
+                    if (isAndroid) {
+                        setTimeout(function () {
+                            window.location = 'https://www.tesla.cn/go/app';
+                        }, 2000);
+                    }
+                };
+            })();
+        });
+    </script>
+
+</head>
+
+<body>
+    <button class="open-box" type="button" onClick="onOpenClick()">测试</button>
+</body>
+
+</html>
