@@ -87,7 +87,7 @@
       var isWeChat = /micromessenger/i.test(uaStr);
       var isAndroid = /Android/i.test(uaStr);
       var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
-      var path = '/_rs/service_schedule?screen=service_details_screen&channel=wechat';
+      var path = '/_rs/referral?screen=referral_credits_screen';
       var redirectUrl = '';
       var scheme = 'https';
 
@@ -108,7 +108,7 @@
           scheme = "tesla-eng"
         }
 
-        if (false) {
+        if (true) {
           if (window.location.href.includes("www.tesla.cn")) {
             redirectUrl = scheme + '://ownership.tesla.cn' + path;
           } else {
