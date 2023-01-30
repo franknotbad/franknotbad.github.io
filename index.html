@@ -99,7 +99,7 @@
         getTarget('wechat-page').style.display = 'block';
         document.title = '即将打开浏览器';
       }
-      function openDeepLink() {
+      window.openDeepLink = function() {
         if (isAndroid) {
           if (isWeChat) {
             showWechatPage();
