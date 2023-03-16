@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="zh-cn">
   <head>
@@ -96,6 +95,8 @@ window.addEventListener('DOMContentLoaded', function () {
           var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
           var isAndroid = /Android/i.test(uaStr);
           var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+          var isWeChat = /micromessenger/i.test(uaStr);
+  
           var redirectUrl = '';
           var scheme = 'https';
           var path = '/_rs/service_schedule?screen=service_details_screen&channel=123'
@@ -133,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function () {
   </head>
   <body>
       <div class="wechat-page">
-          <img src="/static/downloadApp/cn/loot-box/arrow.png" alt="path" />
+          <img src="https://stage.tesla.cn/static/downloadApp/cn/loot-box/arrow.png" alt="path" />
           <div>
               <p>请点击右上角 ···</p>
               <p>选择“在默认浏览器里打开”</p>
