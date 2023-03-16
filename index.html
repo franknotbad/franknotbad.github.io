@@ -1,1 +1,150 @@
 
+
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+      <meta charset="utf-8">
+      <meta id="viewport-tag" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=10;IE=Edge,chrome=1"/>
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="zh_CN">
+      <meta property="og:site_name" content="Tesla">
+      <meta property="og:title" content="Tesla APP 服务预约">
+      <meta property="og:description" content="Tesla APP 服务预约">
+      <title>Tesla APP 服务预约</title>
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" sizes="57x57" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
+      <link rel="icon" type="image/png" sizes="196x196" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
+      <link rel="icon" type="image/png" sizes="160x160" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/x-icon" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
+      
+<style type="text/css">
+body {
+  margin: 0;
+  font-family: "Gotham Book", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,PingFangSC-Regular, "Microsoft YaHei";
+}
+button {
+  width: 80%;
+  max-width: 327px;
+  height: 40px;
+  border: none;
+  background-color: #3e6ae1;
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.content {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  margin-top: 24px;
+}
+.wechat-page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+.wechat-page img {
+  width: 77px;
+  position: absolute;
+  right: 35px;
+  top: 10px;
+}
+.wechat-page div {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  margin-top: 195px;
+}
+</style>
+      
+<script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function () {
+  (function () {
+      function getTarget(className) {
+          return document.querySelector('.' + className);
+      }
+      function showWechatPage() {
+          getTarget('content').style.display = 'none';
+          getTarget('wechat-page').style.display = 'block';
+          document.title = '即将打开浏览器';
+      }
+      window.onOpenClick = function () { 
+          var uaStr = window.navigator.userAgent || window.navigator.vendor || window.opera || '';
+          var isAndroid = /Android/i.test(uaStr);
+          var isIOS = /iPad|iPhone|iPod/i.test(uaStr) && !window.MSStream;
+          var redirectUrl = '';
+          var scheme = 'https';
+          var path = '/_rs/service_schedule?screen=service_details_screen&channel=123'
+          if (isAndroid) {
+              if (isWeChat) {
+                  showWechatPage();
+                  return;
+              }
+              scheme = "tesla-eng";
+          }
+
+          if(false) {
+              if (window.location.href.includes("www.tesla.cn")) {
+                  redirectUrl = scheme + '://ownership.tesla.cn' + path;
+              } else {
+                  redirectUrl = scheme + '://www.tesla.cn' + path;
+              }
+          } else {
+              redirectUrl = scheme + '://mobile-links.eng.vn.cloud.tesla.com' + path;
+          }
+          window.location.href = redirectUrl;
+          if (isAndroid) {
+              setTimeout(function () {
+                  window.location = 'https://www.tesla.cn/go/app';
+              }, 2000);
+          } else if (isIOS && isWeChat) {
+              setTimeout(function () {
+                  showWechatPage();
+              }, 2000);
+          }
+      };
+  })(); 
+});
+</script>
+  </head>
+  <body>
+      <div class="wechat-page">
+          <img src="/static/downloadApp/cn/loot-box/arrow.png" alt="path" />
+          <div>
+              <p>请点击右上角 ···</p>
+              <p>选择“在默认浏览器里打开”</p>
+          </div>
+      </div>
+      <div class="content">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.2333 10.0667C10.876 10.0667 8.85867 10.776 8.56667 13.6533C8.56667 13.6533 4.272 12.0453 2.10667 8.78C10.556 4.84667 19.048 4.66667 19.048 4.66667L24 10.7307L28.948 4.66667C28.948 4.66667 37.4387 4.84267 45.8893 8.776C43.724 12.0413 39.4293 13.6493 39.4293 13.6493C39.1373 10.772 37.1187 10.068 30.7187 10.068L24 48L17.2333 10.0667ZM24 2.92C30.832 2.868 38.652 3.98667 46.656 7.48533C47.7227 5.55067 48 4.696 48 4.696C40.3659 1.63749 32.2239 0.0443859 24 0V0C15.7761 0.0442587 7.63411 1.63737 0 4.696C0.385974 5.65441 0.834956 6.58622 1.344 7.48533C9.348 3.98133 17.168 2.868 24 2.92Z" fill="black"/>
+          </svg>
+          <p>即将离开此页面</p>
+          <button type="button" onClick="onOpenClick()">打开APP</button>
+      </div>
+  </body>
+</html>
